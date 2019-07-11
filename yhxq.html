@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>用户详情</title>
+  <link rel="stylesheet" href="layui/css/layui.css">
+  <link rel="stylesheet" href="css/public.css?v=1.0.8">
+  <link rel="stylesheet" href="css/details.css?v=1.0.8">
+</head>
+<body>
+  <div class="jy-box jy-details">
+    <div class="jy-breadcrumb">
+      <button class="layui-btn goback">返回</button>
+      <span class="layui-breadcrumb" lay-separator="&gt;">
+        <a><cite>用户管理</cite></a>
+        <a class="proName" data-href="yhgl.html?v=1.0.8">用户管理</a>
+        <a><cite>用户审核</cite></a>
+      </span>
+    </div>
+    <table class="titleT project">
+      <tbody>
+        <tr><td>账号</td><td class="mobile"></td><td>姓名</td><td class="userName"></td></tr>
+        <tr><td>性别</td><td class="sex"></td><td>公司</td><td class="companyName"></td></tr>
+        <tr><td>职位</td><td class="jobTitle"></td><td>邮箱</td><td class="email"></td></tr>
+        <tr><td>名片</td><td colspan="3" class="photo"><img src="" alt="" class="businessCard"></td></tr>
+      </tbody>
+    </table>
+    <div class="operation jy-oper">
+      <label>审批</label>
+      <button class="layui-btn agree">同意</button>
+      <button class="layui-btn refuse">不同意</button>
+    </div>
+    <div class="operation advice">
+      <label>建议</label>
+      <div class="textArea">
+        <textarea name="approveContent" placeholder="请输入处理建议" maxlength="20" rows="4"></textarea>
+        <span>20字以内</span>
+      </div>
+      <button class="layui-btn refSubmit">提交</button>
+    </div>
+  </div>
+  <div class="jy-box result">
+    <!-- 插入处理结果 -->
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="layui/layui.js"></script>
+  <script src="js/public.js?v=1.0.8"></script>
+  <script src="js/yhxq.js?v=1.0.8"></script>
+</body>
+</html>

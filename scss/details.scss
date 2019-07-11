@@ -1,0 +1,144 @@
+/*详情页*/
+.jy-details {
+  padding: 30px;
+  .layui-breadcrumb {
+    margin-left: 10px;
+  }
+}
+.jy-details table {
+  width: 100%;
+  margin: 10px 0;
+  text-align: left;
+  tr {
+    td {
+      color: #333;
+      padding: 6px 0;
+    }
+    td:nth-child(odd) {
+      color: #999;
+      width: 10%;
+      padding-right: 10px;
+      white-space: nowrap;
+      text-align: right;
+    }
+    td:nth-child(even) {
+      text-align: left;
+      width: 40%;
+    }
+  }
+  .businessCard {// 名片
+    width: 320px;
+    height: 240px;
+  }
+}
+.layui-layer-imgbar {// 移除图片bar的文字
+  opacity: 0;
+}
+$themeC: #25ab38;
+.parent {// 列表
+  $bc:#eee;
+  .tit {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    border-bottom: 1px solid $bc;
+    .name {
+      padding: 3px 15px;
+      border-radius: 20px;
+      border: 1px solid $themeC;
+      color: $themeC;
+      float: left;
+    }
+    i {
+      font-style: normal;
+      font-weight: 600;
+    }
+  }
+  .child {
+    border-bottom: 1px solid $bc;
+    // 表格
+    td:nth-child(odd) {
+      width: 10%;
+    }
+    td:nth-child(even) {
+      width: 23%;
+    }
+    .price {
+      text-align: right;
+      font-size: 18px;
+      color: #ee6962;
+      margin-bottom: 10px;
+    }
+  }
+}
+// 审批
+.operation {
+  display: none;
+  margin: 10px;
+  position: relative;
+  padding-left: 40px;
+  label {
+    white-space: nowrap;
+    position: absolute;
+    left: 0;
+    top: 8px;
+  }
+  .refuse {
+    color: $themeC;
+    border: 1px solid $themeC;
+    background-color: #fff;
+  }
+  &.advice {
+    .textArea {
+      position: relative;
+      margin-right: 18px;
+      textarea {
+        width: 100%;
+        padding: 13px;
+        resize: none;
+      }
+      span {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        z-index: 2;
+        color: #999;
+      }
+    }
+  }
+}
+// 意见
+.result {
+  display: none;
+  margin-top: 20px;
+  padding: 30px;
+  .child {
+    margin-bottom: 8px;
+  }
+  p {
+    padding-left: 50px;
+  }
+  .circle {
+    font-weight: 600;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      left: 26px;
+      top: 5px;
+      border-radius: 50%;
+      background-color: $themeC;
+    }
+  }
+  .s {
+    color: #666;
+    font-size: 12px;
+    .time {
+      margin-right: 10px;
+    }
+  }
+}

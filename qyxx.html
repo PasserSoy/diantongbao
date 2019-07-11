@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>企业信息</title>
+  <link rel="stylesheet" href="layui/css/layui.css">
+  <link rel="stylesheet" href="css/public.css?v=1.0.8">
+  <link rel="stylesheet" href="css/formTable.css?v=1.0.8">
+</head>
+<body>
+  <!-- 信息提示 -->
+  <ul class="jy-box msgBox">
+    <li>
+      全部信息 ( <span class="total">0</span> )
+    </li>
+    <li>
+      待审核 ( <span class="shenHeZhong">0</span> )
+    </li>
+    <li>
+      已通过 ( <span class="shenHeTongGuo">0</span> )
+    </li>
+    <li>
+      未通过 ( <span class="shenHeShiBai">0</span> )
+    </li>
+  </ul>
+  <div class="jy-box layui-form jy-form">
+    <div class="layui-inline">
+      <label class="layui-form-label">企业名称</label>
+      <div class="layui-input-inline">
+        <input type="text" name="keywordQuery" autocomplete="off" class="layui-input" placeholder="请输入企业名称">
+      </div>
+    </div>
+    <div class="layui-inline">
+      <label class="layui-form-label">状态</label>
+      <div class="layui-input-inline">
+        <select name="approveStatus" lay-filter="status">
+          <option value=""></option>
+          <option value="1">待审核</option>
+          <option value="2">已通过</option>
+          <option value="3">未通过</option>
+          <option value="4">下架</option>
+        </select>
+      </div>
+    </div>
+    <div class="layui-inline jy-date">
+      <label class="layui-form-label">创建时间</label>
+      <div class="layui-input-inline">
+        <input type="text" name="queryBeginTime" id="startTime" autocomplete="off" class="layui-input" placeholder="开始时间">
+      </div>
+      <span>—</span>
+      <div class="layui-input-inline">
+        <input type="text" name="queryEndTime" id="endTime" autocomplete="off" class="layui-input" placeholder="结束时间">
+      </div>
+    </div>
+    <div class="layui-inline">
+      <button class="layui-btn" lay-submit lay-filter="jy-search">查询</button>
+    </div>
+  </div>
+  <div class="jy-box">
+    <table id="jy-table" class="jy-table" lay-filter="jyTable"></table>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="layui/layui.js"></script>
+  <script src="js/public.js?v=1.0.8"></script>
+  <script src="js/formTable.js?v=1.0.8"></script>
+  <script src="js/qyxx.js?v=1.0.8"></script>
+</body>
+</html>

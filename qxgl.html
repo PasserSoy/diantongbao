@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>权限管理</title>
+  <link rel="stylesheet" href="layui/css/layui.css">
+  <link rel="stylesheet" href="css/public.css?v=1.0.8">
+  <link rel="stylesheet" href="css/formTable.css?v=1.0.8">
+</head>
+<body>
+  <div class="jy-box">
+    <div class="layui-inline">
+      <button class="layui-btn jyPop" data-add="jy-add">+增加管理员</button>
+    </div>
+    <table id="jy-table" class="jy-table" lay-filter="jyTable"></table>
+  </div>
+  <div class="layui-form jy-pop" lay-filter="jyPop">
+    <input type="hidden" name="id">
+    <div class="layui-form-item">
+      <label class="layui-form-label">手机:</label>
+      <div class="layui-input-block">
+        <input type="tel" name="mobile" lay-verify="required|phone" placeholder="请输入手机号" autocomplete="off" class="layui-input" maxlength="11">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">姓名:</label>
+      <div class="layui-input-block">
+        <input type="text" name="userName" lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">权限:</label>
+      <div class="layui-input-block">
+        <input type="checkbox" name="index" lay-skin="primary" title="首页信息">
+        <input type="checkbox" name="salesManagement" lay-skin="primary" title="销售管理">
+        <input type="checkbox" name="orderManagement" lay-skin="primary" title="订单管理">
+        <input type="checkbox" name="userManagement" lay-skin="primary" title="用户管理">
+        <input type="checkbox" name="projectManagement" lay-skin="primary" title="项目管理">
+        <input type="checkbox" name="customerService" lay-skin="primary" title="客服服务">
+        <input type="checkbox" name="financialManagement" lay-skin="primary" title="财务管理">
+        <input type="checkbox" name="sysUserManagement" lay-skin="primary" title="权限管理">
+        <input type="checkbox" name="versionManagement" lay-skin="primary" title="版本管理">
+      </div>
+    </div>
+    <button class="hide" lay-submit="" lay-filter="submit"></button>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="layui/layui.js"></script>
+  <script src="js/public.js?v=1.0.8"></script>
+  <script src="js/formTable.js?v=1.0.8"></script>
+  <script src="js/qxgl.js?v=1.0.8"></script>
+</body>
+</html>

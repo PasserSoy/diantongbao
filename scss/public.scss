@@ -1,0 +1,95 @@
+/*公共样式*/
+$themeC: #25ab38;// 主题色
+body {
+  padding: 20px;
+}
+.jy-box {
+  box-shadow: 0 0 15px #c4e4c8;
+  background-color: #fff;
+  padding: 3px;
+}
+.layui-btn {
+  background-color: $themeC;
+  padding: 0 25px;
+}
+.layui-table-cell {
+  padding: 0 5px;
+}
+a[href],[data-href] {
+  cursor: pointer;
+}
+// loading
+i.layui-icon.layui-icon-loading {
+  animation: rote .5s infinite;
+}
+@keyframes rote {
+  100% { transform: rotate(360deg); }
+}
+// 回顶
+.layui-fixbar li {
+  border-radius: 50%;
+}
+// 详情页面的loading
+.loadingDom {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4fbf5;
+  i {
+    font-size: 45px;
+    color: #c2c2c2;
+  }
+}
+.hide {
+  display: none;
+}
+// 弹出框的样式
+body {
+  .search-confirm {
+    border-radius: 10px 10px 0 0;
+    .layui-layer-title {// 标题
+      border-radius: 10px 10px 0 0;
+      background-color: $themeC;
+      color: #fff;
+    }
+    .layui-layer-setwin a {// 关闭按钮
+      background: none;
+      &::after {
+        content: "×";
+        display: block;
+        width: 17px;
+        height: 17px;
+        text-align: center;
+        line-height: 17px;
+        font-size: 16px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        color: #fff;
+        margin-top: -5px;
+      }
+    }
+    .layui-layer-content {// 主体
+      text-align: center;
+    }
+    .layui-layer-btn {// 操作按钮
+      padding: 0 25px 25px;
+      display: flex;
+      justify-content: space-around;
+      a {
+        border: 1px solid $themeC;
+        color: $themeC;
+      }
+      .layui-layer-btn0 {
+        border-color: $themeC;
+        background-color: $themeC;
+        color: #fff;
+      }
+    }
+  }
+}

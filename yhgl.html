@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>用户管理</title>
+  <link rel="stylesheet" href="layui/css/layui.css">
+  <link rel="stylesheet" href="css/public.css?v=1.0.8">
+  <link rel="stylesheet" href="css/formTable.css?v=1.0.8">
+</head>
+<body>
+  <div class="jy-box layui-form jy-form">
+    <div class="layui-inline">
+      <label class="layui-form-label">账号</label>
+      <div class="layui-input-inline">
+        <input type="text" name="keywordQuery" autocomplete="off" class="layui-input" placeholder="请输入账号">
+      </div>
+    </div>
+    <div class="layui-inline">
+      <label class="layui-form-label">状态</label>
+      <div class="layui-input-inline">
+        <select name="approveStatus" lay-filter="status">
+          <option value=""></option>
+          <option value="1">待审核</option>
+          <option value="2">已通过</option>
+          <option value="3">未通过</option>
+          <option value="4">下架</option>
+        </select>
+      </div>
+    </div>
+    <div class="layui-inline jy-date">
+      <label class="layui-form-label">创建时间</label>
+      <div class="layui-input-inline">
+        <input type="text" name="queryBeginTime" id="startTime" autocomplete="off" class="layui-input" placeholder="开始时间">
+      </div>
+      <span>—</span>
+      <div class="layui-input-inline">
+        <input type="text" name="queryEndTime" id="endTime" autocomplete="off" class="layui-input" placeholder="结束时间">
+      </div>
+    </div>
+    <div class="layui-inline">
+      <button class="layui-btn" lay-submit lay-filter="jy-search">查询</button>
+    </div>
+  </div>
+  <div class="jy-box">
+    <table id="jy-table" class="jy-table" lay-filter="jyTable"></table>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="layui/layui.js"></script>
+  <script src="js/public.js?v=1.0.8"></script>
+  <script src="js/formTable.js?v=1.0.8"></script>
+  <script src="js/yhgl.js?v=1.0.8"></script>
+</body>
+</html>

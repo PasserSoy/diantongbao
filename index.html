@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>电通宝</title>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="layui/css/layui.css">
+  <link rel="stylesheet" href="css/index.css?v=1.0.8">
+</head>
+<body>
+  <div id="index">
+    <header>
+      <span>您好！欢迎 
+        <i class="user">admin</i>
+        <i class="dates">
+          <span class="date"></span>
+          <span class="week"></span>
+          <span class="time"></span>
+        </i>
+      </span>
+      <div class="exit">退出</div>
+    </header>
+    <nav class="myShade">
+      <div class="logo">
+        <img src="img/logo.png" alt="">
+      </div>
+      <ul class="jy-nav">
+        <li class="jy-nav-item li1" data-userRoles="index"><a data-href="zhuye.html?v=1.0.8">首页信息</a></li>
+        <li class="jy-nav-item li2" data-userRoles="salesManagement">
+          <a>销售管理 <i class="layui-icon layui-icon-right"></i></a>
+          <dl class="jy-nav-child">
+            <dd><a data-href="xsgl.html?v=1.0.8">销售管理</a></dd>
+            <dd><a data-href="bannergl.html?v=1.0.8">banner管理</a></dd>
+          </dl>
+        </li>
+        <li class="jy-nav-item li3" data-userRoles="orderManagement">
+          <a>订单管理 <i class="layui-icon layui-icon-right"></i></a>
+          <dl class="jy-nav-child">
+            <dd><a data-href="ddgl.html?v=1.0.8">订单管理</a></dd>
+            <dd><a data-href="sydd.html?v=1.0.8">所有订单</a></dd>
+          </dl>
+        </li>
+        <li class="jy-nav-item li4" data-userRoles="userManagement"><a data-href="yhgl.html?v=1.0.8">用户管理</a></li>
+        <li class="jy-nav-item li5" data-userRoles="projectManagement">
+          <a>项目管理 <i class="layui-icon layui-icon-right"></i></a>
+          <dl class="jy-nav-child">
+            <dd><a data-href="gcxx.html?v=1.0.8">工程信息</a></dd>
+            <dd><a data-href="qyxx.html?v=1.0.8">企业信息</a></dd>
+            <dd><a data-href="sjyxx.html?v=1.0.8">设计院信息</a></dd>
+            <dd><a data-href="xxjc.html?v=1.0.8">信息纠错</a></dd>
+          </dl>
+        </li>
+        <li class="jy-nav-item li6" data-userRoles="customerService"><a data-href="khfw.html?v=1.0.8">客户服务</a></li>
+        <li class="jy-nav-item li7" data-userRoles="financialManagement">
+          <a>财务管理 <i class="layui-icon layui-icon-right"></i></a>
+          <dl class="jy-nav-child">
+            <dd><a data-href="lrfc.html?v=1.0.8">利润分成</a></dd>
+            <dd><a data-href="txgl.html?v=1.0.8">提现管理</a></dd>
+          </dl>
+        </li>
+        <li class="jy-nav-item li8" data-userRoles="sysUserManagement">
+          <a>权限管理 <i class="layui-icon layui-icon-right"></i></a>
+          <dl class="jy-nav-child">
+            <dd><a data-href="qxgl.html?v=1.0.8">权限管理</a></dd>
+            <dd><a data-href="hyfl.html?v=1.0.8">行业分类</a></dd>
+          </dl>
+        </li>
+        <li class="jy-nav-item li9" data-userRoles="versionManagement"><a data-href="bbgl.html?v=1.0.8">版本管理</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <iframe src="" id="myFrame" frameborder="0"></iframe>
+    </div>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="layui/layui.js"></script>
+  <script src="js/public.js?v=1.0.8"></script>
+  <script src="js/index.js?v=1.0.8"></script>
+</body>
+</html>

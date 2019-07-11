@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>行业分类</title>
+  <link rel="stylesheet" href="layui/css/layui.css">
+  <link rel="stylesheet" href="css/public.css?v=1.0.8">
+  <link rel="stylesheet" href="css/formTable.css?v=1.0.8">
+  <link rel="stylesheet" href="css/hyfl.css?v=1.0.8">
+</head>
+<body>
+  <div class="jy-box">
+    <div class="jy-form">
+      <button class="layui-btn jyPop add add1">新增分类</button>
+      <button class="layui-btn toAll">展开全部</button>
+    </div>
+    <!-- 新增结果显示在这里 -->
+    <ul class="hy-result">
+      <!-- <li>
+        <div class="hy-one">
+          <div>
+            <i class="head"></i>
+            <span class="name">一级分类</span>
+          </div>
+          <div>
+            <i class="edit"></i>
+            <i class="add"></i>
+          </div>
+        </div>
+        <ul class="hy-two-result">
+          <li>
+              <div class="hy-two">
+                <span class="name">二级分类</span>
+                <i class="edit"></i>
+              </div>
+          </li>
+        </ul>
+      </li> -->
+    </ul>
+  </div>
+  <div class="layui-form jy-pop" lay-filter="jyPop">
+    <input type="hidden" name="parentId">
+    <input type="hidden" name="id">
+    <div class="layui-form-item">
+      <label class="layui-form-label">分类名称:</label>
+      <div class="layui-input-block">
+        <input type="text" name="name" lay-verify="required" placeholder="请输入分类名称" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <button class="hide" lay-submit="" lay-filter="submit"></button>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="layui/layui.js"></script>
+  <script src="js/public.js?v=1.0.8"></script>
+  <script src="js/hyfl.js?v=1.0.8"></script>
+</body>
+</html>

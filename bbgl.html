@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>版本管理</title>
+  <link rel="stylesheet" href="layui/css/layui.css">
+  <link rel="stylesheet" href="css/public.css?v=1.0.8">
+  <link rel="stylesheet" href="css/formTable.css?v=1.0.8">
+  <style>
+    .jy-pop .layui-form-label { width: 90px; }
+    .jy-pop .layui-input-block {margin-left: 120px;}
+    .jy-pop .layui-textarea {min-height: 60px;resize: none;}
+    .jy-pop .layui-btn {padding: 0 5px;}
+  </style>
+</head>
+<body>
+  <div class="jy-box">
+    <div class="layui-inline">
+      <button class="layui-btn jyPop" data-add="jy-add">+增加版本</button>
+    </div>
+    <table id="jy-table" class="jy-table" lay-filter="jyTable"></table>
+  </div>
+  <div class="layui-form jy-pop" lay-filter="jyPop">
+    <input type="hidden" name="id">
+    <div class="layui-form-item">
+      <label class="layui-form-label">是否强制更新:</label>
+      <div class="layui-input-block">
+        <select name="mustVerup" lay-filter="mustVerup">
+          <!-- <option value=""></option> -->
+          <option value="0" selected="">非强制更新</option>
+          <option value="1">强制更新</option>
+        </select>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">操作平台:</label>
+      <div class="layui-input-block">
+        <select name="os" lay-filter="os">
+          <option value="1" selected="">安卓</option>
+          <option value="2">IOS</option>
+        </select>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">版本名称:</label>
+      <div class="layui-input-block">
+        <input type="text" name="verName" lay-verify="required" placeholder="请输入版本名称" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">版本号:</label>
+      <div class="layui-input-block">
+        <input type="text" name="verNo" lay-verify="required|number" placeholder="请输入版本号" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">备注信息:</label>
+      <div class="layui-input-block">
+        <textarea name="remark" placeholder="请输入备注信息" class="layui-textarea" maxlength="20"></textarea>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">版本上传:</label>
+      <div class="layui-input-block">
+          <button type="button" class="layui-btn" id="upload">选择文件</button>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">下载地址:</label>
+      <div class="layui-input-block">
+        <input type="hidden" name="downloadUrl">
+        <input type="text" lay-verify="required" placeholder="通过版本上传自动获取" class="layui-input downloadUrl" readonly>
+      </div>
+    </div>
+    <button class="hide" lay-submit="" lay-filter="submit"></button>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="layui/layui.js"></script>
+  <script src="js/public.js?v=1.0.8"></script>
+  <script src="js/formTable.js?v=1.0.8"></script>
+  <script src="js/bbgl.js?v=1.0.8"></script>
+</body>
+</html>

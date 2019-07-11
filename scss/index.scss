@@ -1,0 +1,279 @@
+$navW: 187px;// nav垂直导航
+$boxc: #c4e4c8;// 阴影颜色
+$themec: #25ab38;// 主题颜色
+@mixin trs {
+  transition: all .5s;
+}
+#index {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  background-color: #f4fbf5;
+  i {
+    font-style: normal;
+  }
+  // 头部导航
+  header {
+    position: relative;
+    height: 40px;
+    padding-left: 220px;
+    background-color: #fff;
+    // box-shadow: 0 2px 14px $boxc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include trs;
+    * {
+      font-size: 13px;
+      font-family: 'microsoft yahei','微软雅黑';
+    }
+    // 用户名 日期
+    span {
+
+    }
+    // 退出
+    .exit {
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+      margin-right: 30px;
+      padding-left: 22px;
+      background: url('../img/exit.png') 0 0 no-repeat;
+      &:hover {
+        color: $themec;
+      }
+    }
+  }
+  // 侧边栏
+  nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: $navW;
+    z-index: 9;
+    background-color: #fff;
+    // box-shadow: 0 2px 14px $boxc;
+    @include trs;
+    // logo
+    .logo {
+      position: relative;
+      width: $navW;
+      height: 40px;
+      background-color: $themec;
+      box-shadow: 0 2px 7px #529c5b;
+      text-align: center;
+      @include trs;
+      img {
+        width: 53px;
+        padding: 5px 0;
+        height: 30px;
+      }
+    }
+    // 导航
+    .jy-nav {
+      overflow: auto;
+      position: absolute;
+      top: 40px;
+      bottom: 0;
+      z-index: -1;
+      &::-webkit-scrollbar {// 滚动条样式
+        display: none;
+      }
+    }
+  }
+  // 主体
+  .container {
+    position: fixed;
+    left: $navW;
+    top: 41px;
+    right: 0;
+    bottom: 0;
+    box-shadow: 2px 2px 14px $boxc inset;
+    @include trs;
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  // 遮罩
+  .shade {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: -1px;
+    bottom: -1px;
+    z-index: 9;
+    background-color: #000;
+    opacity: .3;
+  }
+}
+/////////////////垂直导航
+$nav-checked: #e5f5e7;// 背景
+$nav-text: #25ab38;// 文字
+.jy-nav {
+  width: 100%;
+  .jy-nav-item {
+    &.jy-checked {
+      &>a {
+        color: $nav-text;
+      }
+    }
+    .jy-checked {
+      &>a {
+        background-color: $nav-checked;
+        color: $nav-text;
+      }
+    }
+    a {
+      user-select: none;
+      display: block;
+      cursor: pointer;
+      font-size: 16px;
+      height: 40px;
+      line-height: 40px;
+      padding-left: 55px;
+      position: relative;
+      &:hover {
+        background-color: $nav-checked;
+        color: $nav-text;
+        &::before {
+          background-position-y: -20px;
+        }
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        left: 25px;
+        top: 10px;
+        width: 18px;
+        height: 18px;
+      }
+      .layui-icon {
+        float: right;
+        margin-right: 10px;
+      }
+    }
+    // 子项
+    .jy-nav-child {
+      display: none;
+      &.jy-show {
+        display: block;
+      }
+    }
+  }
+  li.jy-checked >a::before {
+    background-position-y: -20px !important;
+  }
+  li.li1 >a::before {
+    background: url('../img/nav1.png') 0 0 no-repeat;
+  }
+  li.li2 >a::before {
+    background: url('../img/nav2.png') 0 0 no-repeat;
+  }
+  li.li3 >a::before {
+    background: url('../img/nav3.png') 0 0 no-repeat;
+  }
+  li.li4 >a::before {
+    background: url('../img/nav4.png') 0 0 no-repeat;
+  }
+  li.li5 >a::before {
+    background: url('../img/nav5.png') 0 0 no-repeat;
+  }
+  li.li6 >a::before {
+    background: url('../img/nav6.png') 0 0 no-repeat;
+  }
+  li.li7 >a::before {
+    background: url('../img/nav7.png') 0 0 no-repeat;
+  }
+  li.li8 >a::before {
+    background: url('../img/nav8.png') 0 0 no-repeat;
+  }
+  li.li9 >a::before {
+    background: url('../img/nav9.png') 0 0 no-repeat;
+  }
+}
+/////////////媒体查询
+@media screen and (max-width:1024px) {// 750px
+  #index {
+    // 头部导航
+    header {
+      padding-left: 85px;
+      .dates {
+        display: block;
+      }
+    }
+    // 侧边栏
+    nav {
+      transform: translateX(-$navW);
+      .logo {
+        width: 63px;
+        transform: translateX($navW);
+      }
+      // 鼠标滑过，显示菜单
+      &.myShade {
+        box-shadow: 0 2px 14px $boxc;
+        &:hover {
+          transform: translateX(0);
+          .logo {
+            transform: translateX(0);
+            width: 100%;
+          }
+        }
+      }
+    }
+    // 主体
+    .container {
+      left: 0;
+    }
+  }
+}
+
+// 弹出框的样式
+body {
+  $themeC: #25ab38;// 主题色
+  .layui-layer-dialog {
+    border-radius: 10px 10px 0 0;
+    .layui-layer-title {// 标题
+      border-radius: 10px 10px 0 0;
+      background-color: $themeC;
+      color: #fff;
+    }
+    .layui-layer-setwin a {// 关闭按钮
+      background: none;
+      &::after {
+        content: "×";
+        display: block;
+        width: 17px;
+        height: 17px;
+        text-align: center;
+        line-height: 17px;
+        font-size: 16px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        color: #fff;
+        margin-top: -5px;
+      }
+    }
+    .layui-layer-content {// 主体
+      text-align: center;
+    }
+    .layui-layer-btn {// 操作按钮
+      padding: 0 25px 25px;
+      display: flex;
+      justify-content: space-around;
+      a {
+        border: 1px solid $themeC;
+        color: $themeC;
+      }
+      .layui-layer-btn0 {
+        border-color: $themeC;
+        background-color: $themeC;
+        color: #fff;
+      }
+    }
+  }
+}

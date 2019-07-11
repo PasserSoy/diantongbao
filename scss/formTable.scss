@@ -1,0 +1,120 @@
+/*表单表单样式*/
+.msgBox {
+  display: flex;
+  justify-content: space-around;
+  li {
+    padding: 7px 3px;
+    border: 1px solid #bfbfbf;
+    border-radius: 3px;
+    span {
+      color: #f00;
+    }
+  }
+}
+.jy-form {
+  margin: 15px 0;
+  padding-bottom: 0;
+  .layui-inline {
+    margin-bottom: 3px;
+  }
+  .layui-form-label {
+    width: auto;
+  }
+  .layui-input {
+    width: 150px;
+  }
+  .jy-date {
+    span {
+      color: #D2D2D2;
+    }
+  }
+}
+// 禁用的复选框
+.DontCheckbox {
+  .layui-form-checkbox {// 复选框
+    span {
+      color: #ccc;
+    }
+    .layui-icon-ok {
+      background-color: #ccc;
+    }
+  }
+}
+/*表格样式*/
+.jy-table {
+  &+.layui-form {// 表格
+    border: 0;
+    .layui-table thead tr {// 标题栏
+      background-color: #eeb887;
+      color: #fff;
+    }
+    .approveStatus {// 状态栏样式
+      padding: 6px 10px;
+      background-color: #b3b3b3;
+      border-radius: 20px;
+      color: #fff;
+      &.approveStatus0 {// 待审核
+        background-color: #52b9c3;
+      }
+      &.approveStatus1 {// 待审核
+        background-color: #52b9c3;
+      }
+      &.approveStatus2 {// 已通过
+        background-color: #79d584;
+      }
+      &.approveStatus3 {// 未通过
+        background-color: #ee6962;
+      }
+      &.approveStatus4 {// 下架
+        background-color: #b3b3b3;
+      }
+    }
+    .opera {// 操作栏样式
+      color: #003cff;
+      cursor: pointer;
+    }
+    // 禁用的表格行
+    .DontEdit {
+      td,.opera  {
+        color: #ccc;
+        cursor: default;
+      }
+      @extend .DontCheckbox;// 禁用复选框
+    }
+  }
+}
+td {// 表格中的复选框
+  .layui-table-cell .layui-form-checkbox[lay-skin=primary] {
+    padding-left: 28px;
+  }
+}
+[lay-id=jy-table] {// 移除表格中的禁止状态样式
+  .layui-disabled, .layui-disabled:hover {
+    cursor: default!important;
+  }
+  .layui-checkbox-disbaled {
+    span {
+      color: #666;
+    }
+  }
+}
+.tableCheck {// 弹窗中的复选框
+  @extend [lay-id=jy-table];
+}
+.DontForm {// 弹窗中禁用的复选框
+  @extend .DontCheckbox;// 禁用复选框
+}
+// 弹窗
+.jy-pop {
+  display: none;
+  margin-top: 20px;
+  .layui-form-label {
+    width: auto;
+  }
+  .layui-input-block {
+    margin-left: 70px;
+    margin-right: 20px;
+    min-height: 36px;
+    text-align: left;
+  }
+}
